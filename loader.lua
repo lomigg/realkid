@@ -1,0 +1,74 @@
+-- ============================================================
+-- LOADER — paste vao Delta X (1 dong)
+-- Thay URL bang raw URL cua main.lua sau khi push len GitHub
+-- ============================================================
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/USERNAME/REPO/refs/heads/main/main.lua"))()
+
+-- ============================================================
+-- HUONG DAN PUSH GITHUB + LAY RAW URL
+-- ============================================================
+--
+-- BUOC 1: Tao GitHub repo
+--   - Vao https://github.com/new
+--   - Repository name: realkid (hoac ten ban muon)
+--   - Set Public (bat buoc, raw URL khong ho tro Private repo mien phi)
+--   - Tick "Add a README file"
+--   - Click "Create repository"
+--
+-- BUOC 2: Upload main.lua
+--   - Trong repo, click "Add file" → "Upload files"
+--   - Keo file main.lua vao (hoac paste noi dung)
+--   - Commit message: "init hub"
+--   - Click "Commit changes"
+--
+-- BUOC 3: Lay raw URL
+--   - Trong repo, click vao file main.lua
+--   - Click nut "Raw" (phia tren phai)
+--   - Copy URL tu thanh dia chi — co dang:
+--     https://raw.githubusercontent.com/USERNAME/realkid/refs/heads/main/main.lua
+--
+-- BUOC 4: Thay URL vao loader
+--   - Dong o tren: thay USERNAME/REPO bang thuc te
+--   - Paste dong do vao Delta X → Execute
+--
+-- ============================================================
+-- CAP NHAT SCRIPT SAU NAY
+-- ============================================================
+--
+-- Khi sua main.lua va muon cap nhat:
+--   - Vao repo → click main.lua → icon but chi (Edit)
+--   - Paste code moi → Commit
+--   - Loader tu dong load ban moi nhat (raw URL khong doi)
+--
+-- Luu y: GitHub raw co cache ~5 phut. Neu code moi khong load ngay,
+-- cho 5 phut hoac them "?v=2" vao cuoi URL de bypass cache:
+--   loadstring(game:HttpGet("URL...main.lua?v=2"))()
+--
+-- ============================================================
+-- HOST KHAC NEU KHONG CO GITHUB
+-- ============================================================
+--
+-- Pastebin:
+--   1. Vao https://pastebin.com
+--   2. Paste main.lua → Create Paste
+--   3. Lay "raw" URL: https://pastebin.com/raw/XXXXXX
+--   4. Loader: loadstring(game:HttpGet("https://pastebin.com/raw/XXXXXX"))()
+--
+-- GitHub Gist:
+--   1. Vao https://gist.github.com
+--   2. File name: main.lua → Paste code → Create public gist
+--   3. Click "Raw" → Copy URL
+--   4. Loader: loadstring(game:HttpGet("RAW_URL"))()
+--
+-- ============================================================
+-- NHUNG GI EXECUTOR CAN DE LOADER CHAY
+-- ============================================================
+--
+-- Delta X ho tro:
+--   - loadstring() function
+--   - game:HttpGet() / request()
+--   - Khong can enable gi them
+--
+-- Neu executor khac (Synapse, Fluxus, Krnl, Wave, Script-Ware):
+--   - Kha nong tuong thich, cung ho tro loadstring + HttpGet
